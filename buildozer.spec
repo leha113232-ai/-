@@ -2,6 +2,7 @@
 title = Courier: Put k Mechte (Rebuild)
 package.name = courierputkmechte
 package.domain = org.couriergame
+version = 0.1.0
 source.dir = src
 main.py = main.py
 requirements = python3,pygame
