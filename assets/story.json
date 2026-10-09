@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "axes": ["light", "truth", "bond"],
+  "quests": {
+    "lex_truth": {
+      "title": "Правда для Лёхи",
+      "stages": ["ask", "investigate", "tell_truth"],
+      "completion_flag": "lex_trust"
+    },
+    "city_saved": {
+      "title": "Город не сломался",
+      "stages": ["clock", "tower", "choice"],
+      "completion_flag": "clock_stopped"
+    },
+    "helped_mother": {
+      "title": "Дом на Липовой",
+      "stages": ["return", "help", "call"],
+      "completion_flag": "helped_mother"
+    }
+  },
+  "endings": [
+    {"id": "dream_together", "flags": ["lex_trust"], "quests": ["lex_truth"], "choice": "stay"},
+    {"id": "dream_free", "flags": ["clock_stopped"], "quests": ["city_saved"], "choice": "leave"},
+    {"id": "dream_god_good", "flags": ["helped_mother", "used_power_wisely"]},
+    {"id": "dream_god_idle", "flags": ["used_power_wisely"]},
+    {"id": "dream_home", "flags": ["returned_home"]},
+    {"id": "thief_boogeyman", "flags": ["took_vector_money", "hid_truth"]},
+    {"id": "demon", "flags": ["accepted_void"]}
+  ]
+}
