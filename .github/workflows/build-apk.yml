@@ -26,14 +26,21 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install buildozer cython==0.29.37
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK packages
+        run: |
+          sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
+
       - name: Cache Android toolchain
         uses: actions/cache@v4
         with:
           path: |
             ~/.buildozer
             ~/.gradle/caches
-          key: android-${{ runner.os }}-${{ hashFiles('buildozer.spec') }}
-          restore-keys: android-${{ runner.os }}-
+          key: android-v2-${{ runner.os }}-${{ hashFiles('buildozer.spec') }}
+          restore-keys: android-v2-${{ runner.os }}-
 
       - name: Build debug APK
         run: buildozer android debug
